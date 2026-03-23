@@ -26,6 +26,20 @@ user_pref("nglayout.initialpaint.delay_in_oopif", 5); // DEFAULT
 // Especially beneficial for sites with many font faces or complex typography.
 // [1] https://bugzilla.mozilla.org/show_bug.cgi?id=1239151#c2
 user_pref("gfx.content.skia-font-cache-size", 32); // 32 MB; default=5; Chrome=20
+user_pref("gfx.wayland.hdr", true);
+user_pref("gfx.color_management.native_srgb", true);
+user_pref("widget.gtk.global-menu.wayland.enabled", true);
+user_pref("gfx.font-list-omt.enabled", true);
+user_pref("gfx.font_loader.delay", 500);
+user_pref("gfx.skia.dithering", true);
+user_pref("gfx.use_text_smoothing_setting", true);
+user_pref("gfx.swap-interval.glx", true);
+user_pref("gfx.swap-interval.egl", true);
+user_pref("gfx.webrender.batched-texture-uploads", true);
+user_pref("gfx.webrender.frame-builder-thread-local-arena", true);
+user_pref("gfx.webrender.scene-builder-thread-local-arena", true);
+user_pref("gfx.webrender.precise-linear-gradients", true);
+user_pref("gfx.ycbcr.accurate-conversion", true);
 
 // PREF: page reflow timer
 // Rather than wait until a page has completely downloaded to display it to the user,
@@ -53,7 +67,7 @@ user_pref("content.notify.ontimer", true); // DEFAULT
 // [2] https://web.archive.org/web/20240115073722/https://dev.opera.com/articles/efficient-javascript/?page=3#reflow
 // [3] https://web.archive.org/web/20240115073722/https://dev.opera.com/articles/efficient-javascript/?page=3#smoothspeed
 user_pref("content.notify.interval", 100000); // (.10s); default=120000 (.12s)
-user_pref("content.max.tokenizing.time", 1000000); // (1.00s); alt=2000000; HIDDEN
+user_pref("content.max.tokenizing.time", 2000000); // (1.00s); alt=2000000; HIDDEN
 user_pref("content.interrupt.parsing", true); // HIDDEN
 
 // PREF: UI responsiveness threshold
@@ -77,7 +91,7 @@ user_pref("browser.newtab.preload", true); // DEFAULT
 // [2] https://bugzilla.mozilla.org/show_bug.cgi?id=1796525
 // [3] https://bugzilla.mozilla.org/show_bug.cgi?id=1800412
 // [4] https://reddit.com/r/firefox/comments/107fj69/how_can_i_disable_the_efficiency_mode_on_firefox/
-//user_pref("dom.ipc.processPriorityManager.backgroundUsesEcoQoS", false);
+user_pref("dom.ipc.processPriorityManager.backgroundUsesEcoQoS", false);
 
 // PREF: control how tabs are loaded when a session is restored
 // true=Tabs are not loaded until they are selected (default)
@@ -166,8 +180,8 @@ user_pref("webgl.force-enabled", true);
 // [2] https://phabricator.services.mozilla.com/D175993
 user_pref("gfx.webrender.dcomp-video-hw-overlay-win", true); // DEFAULT
 user_pref("gfx.webrender.dcomp-video-hw-overlay-win-force-enabled", true); // enforce
-//user_pref("gfx.webrender.dcomp-video-sw-overlay-win", true); // DEFAULT
-    //user_pref("gfx.webrender.dcomp-video-sw-overlay-win-force-enabled", true); // enforce
+user_pref("gfx.webrender.dcomp-video-sw-overlay-win", true); // DEFAULT
+user_pref("gfx.webrender.dcomp-video-sw-overlay-win-force-enabled", true); // enforce
 
 /****************************************************************************
  * SECTION: DISK CACHE                                                     *
@@ -339,7 +353,7 @@ user_pref("media.memory_caches_combined_limit_pc_sysmem", 10); // DEFAULT; alt=1
 // false=Firefox plays the old WebM format
 // true=Firefox plays the new WebM format (default)
 // [1] https://support.mozilla.org/en-US/questions/1008271
-//user_pref("media.mediasource.enabled", true); // DEFAULT
+user_pref("media.mediasource.enabled", true); // DEFAULT
 
 // PREF: adjust video buffering periods when not using MSE (in seconds)
 // [NOTE] Does not affect videos over 720p since they use DASH playback [1]
